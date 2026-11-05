@@ -95,10 +95,11 @@ Change `Your Brand` on the second line:
 (function () {
   var BRAND = 'Rankescalate';
 
-  // Browser tab title: "Dashboard / rankescalate" -> "Dashboard / Your Brand"
+  // Browser tab title: "Dashboard / listmonk" -> "Dashboard / Your Brand"
+  // (keep 'listmonk' here: it's the text the app puts in the title, which we replace)
   function fixTitle() {
-    if (document.title.indexOf('rankescalate') !== -1) {
-      document.title = document.title.replace(/rankescalate/g, BRAND);
+    if (document.title.indexOf('listmonk') !== -1) {
+      document.title = document.title.replace(/listmonk/g, BRAND);
     }
   }
 
