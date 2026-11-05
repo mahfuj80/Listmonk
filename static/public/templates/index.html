@@ -3,12 +3,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
-	<title>{{ .Data.Title }} - {{ .SiteName }}</title>
+	<title>{{ .Data.Title }} - Rankescalate</title>
 	<meta name="description" content="{{ .Data.Description }}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
 	{{ if .EnablePublicArchive }}
-		<link rel="alternate" type="application/rss+xml" title="{{ L.T "public.archiveTitle" }} - {{ .SiteName }}"
+		<link rel="alternate" type="application/rss+xml" title="{{ L.T "public.archiveTitle" }} - Rankescalate"
 			href="{{ .RootURL }}/archive.xml" />
 	{{ end }}
 
@@ -28,9 +28,9 @@
 			<div class="logo">
 				<a href="{{ if .EnablePublicSubPage }}{{ .RootURL}}/subscription/form{{ end }}">
 				{{ if ne .LogoURL "" }}
-					<img src="{{ .LogoURL }}" alt="{{ .Data.Title }}" />
+					<img src="{{ .LogoURL }}" alt="Rankescalate" />
 				{{ else }}
-					<img src="/public/static/logo.svg?v={{ .AssetVersion }}" alt="{{ .Data.Title }}" />
+					<img src="/public/static/logo.png?v={{ .AssetVersion }}" alt="Rankescalate" />
 				{{ end }}
 				</a>
 			</div>
@@ -41,7 +41,7 @@
 	</div>
 	
 	<footer class="container">
-		&copy; {{ .SiteName }}
+		&copy; Rankescalate
 	</footer>
 </body>
 </html>
