@@ -97,7 +97,7 @@
         <p>
             Transactional templates supports arbitrary parameters.
             Render them using <code>.Tx.Data.YourParamName</code>. For more information,
-            see the transactional mailing <a href="https://listmonk.app/docs/transactional">documentation</a>.
+            see the transactional mailing <a href="https://rankescalate.app/docs/transactional">documentation</a>.
         </p>
     </div>
     

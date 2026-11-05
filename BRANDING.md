@@ -1,6 +1,6 @@
-# Branding this listmonk install
+# Branding this rankescalate install
 
-Three layers, all without touching listmonk's source code:
+Three layers, all without touching rankescalate's source code:
 
 | Layer | Where | Changes |
 |---|---|---|
@@ -14,7 +14,7 @@ Do the steps in order: **3 → 1 → 2** (files first, then the settings that po
 
 ## Step 3 — Template files (`./static/`)
 
-This folder is a copy of listmonk **v6.2.0**'s built-in templates. listmonk loads it
+This folder is a copy of rankescalate **v6.2.0**'s built-in templates. rankescalate loads it
 instead of its built-in copy (`--static-dir` in `docker-compose.yml`).
 
 ### Replace the logo and favicon
@@ -30,7 +30,7 @@ Keep the **same file names**. Restart after changing: `docker compose restart ap
 
 | File | What it is |
 |---|---|
-| `static/public/static/style.css` | Look of all public pages. Brand colour: replace `#0055d4` (listmonk blue) |
+| `static/public/static/style.css` | Look of all public pages. Brand colour: replace `#0055d4` (rankescalate blue) |
 | `static/public/templates/index.html` | Header (logo) + footer of all public pages. Footer shows `© <Site name>` |
 | `static/public/templates/subscription-form.html` | Public signup page |
 | `static/public/templates/subscription.html` | Manage-subscription / unsubscribe page |
@@ -41,7 +41,7 @@ Keep the **same file names**. Restart after changing: `docker compose restart ap
 | `static/email-templates/base.html` | Header/footer of **system** emails (opt-in confirmation, etc.) |
 | `static/email-templates/default.tpl` | Starting campaign template, copied into the DB on **first** install only |
 
-Already done: "Powered by listmonk" removed from the public footer and the email footers.
+Already done: "Powered by rankescalate" removed from the public footer and the email footers.
 In the email templates the footer is now an HTML comment. Put your own footer text there.
 
 **Rule:** don't remove the `{{ ... }}` tags. They insert data (links, names, translations).
@@ -72,7 +72,7 @@ Also: **Campaigns → Templates**. Edit the default template to put in your logo
 ### Admin tab → Custom CSS
 
 ```css
-/* Replace the listmonk logo in the admin top bar with yours */
+/* Replace the rankescalate logo in the admin top bar with yours */
 .navbar-brand .logo img { display: none !important; }
 .navbar-brand .logo a {
   display: block;
@@ -95,10 +95,10 @@ Change `Your Brand` on the second line:
 (function () {
   var BRAND = 'Rankescalate';
 
-  // Browser tab title: "Dashboard / listmonk" -> "Dashboard / Your Brand"
+  // Browser tab title: "Dashboard / rankescalate" -> "Dashboard / Your Brand"
   function fixTitle() {
-    if (document.title.indexOf('listmonk') !== -1) {
-      document.title = document.title.replace(/listmonk/g, BRAND);
+    if (document.title.indexOf('rankescalate') !== -1) {
+      document.title = document.title.replace(/rankescalate/g, BRAND);
     }
   }
 
@@ -134,9 +134,9 @@ Changing those means building your own Docker image from modified source (AGPL-3
 
 ---
 
-## Upgrading listmonk later (important)
+## Upgrading rankescalate later (important)
 
-`./static` overrides listmonk's built-in templates, so it must match the app version.
+`./static` overrides rankescalate's built-in templates, so it must match the app version.
 If you upgrade with old templates, pages can break.
 
 1. Back up the database first.
