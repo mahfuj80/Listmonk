@@ -16,6 +16,7 @@ services:
     ports:
       - "9000:9000"
     networks:
+      - listmonk
     hostname: listmonk.example.com
     depends_on:
       - db
