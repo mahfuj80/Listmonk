@@ -36,7 +36,8 @@ Keep the **same file names**. Restart after changing: `docker compose restart ap
 | `static/public/templates/subscription.html` | Manage-subscription / unsubscribe page |
 | `static/public/templates/optin.html` | Opt-in confirmation page |
 | `static/public/templates/archive.html` | Public newsletter archive |
-| `static/public/templates/login.html` | Admin login page |
+| `static/public/templates/login.html` | Admin login page (form) |
+| `static/public/templates/admin-base.html` | v7: header/footer (logo, `© Rankescalate`) of the login, 2FA and password-reset pages |
 | `static/public/templates/message.html` | Generic message page ("You are unsubscribed", errors) |
 | `static/email-templates/base.html` | Header/footer of **system** emails (opt-in confirmation, etc.) |
 | `static/email-templates/default.tpl` | Starting campaign template, copied into the DB on **first** install only |
