@@ -9,9 +9,9 @@
                 <a href="{{ $c.URL }}">{{ $c.Subject }}</a>
                 <span class="date">
                     {{ if $c.SendAt.Valid }}
-                        {{ $c.SendAt.Time.Format "Mon, 02 Jan 2006" }}
+                        {{ NiceDate $c.SendAt }}
                     {{ else }}
-                        {{ $c.CreatedAt.Time.Format "Mon, 02 Jan 2006" }}
+                        {{ NiceDate $c.CreatedAt }}
                     {{ end }}
                 </span>
             </li>
@@ -24,11 +24,11 @@
 
     {{ if .EnablePublicSubPage }}
         <div class="right">
-            <a href="{{ .RootURL }}/archive.xml">
+            <a href="{{ .RootURL }}/archive{{ if .Data.ListUUID }}/list/{{ .Data.ListUUID }}{{ end }}.xml">
                 <img src="{{ .RootURL }}/public/static/rss.svg" alt="RSS" class="feed"
                     width="16" height="16" />
             </a>
-            <a href="{{ .RootURL }}/subscription/form">{{ L.T "public.sub" }}</a>
+            <a href="{{ .RootURL }}/subscription/form">{{ L.T "globals.buttons.subscribe" }}</a>
         </div>
     {{ end }}
 

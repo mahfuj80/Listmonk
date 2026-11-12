@@ -14,7 +14,7 @@ Do the steps in order: **3 → 1 → 2** (files first, then the settings that po
 
 ## Step 3 — Template files (`./static/`)
 
-This folder is a copy of rankescalate **v6.2.0**'s built-in templates. rankescalate loads it
+This folder is a copy of listmonk **v7.0.0-beta.2**'s built-in templates on the `v7-test` branch (**v6.2.0** on `main`). rankescalate loads it
 instead of its built-in copy (`--static-dir` in `docker-compose.yml`).
 
 ### Replace the logo and favicon
@@ -69,26 +69,39 @@ Also: **Campaigns → Templates**. Edit the default template to put in your logo
 
 ## Step 2 — Settings → Appearance
 
-### Admin tab → Custom CSS
+### Admin tab → Custom CSS (v7, new admin design)
+
+Delete everything in the box first: the old v6 CSS colours every sidebar link in v7. Then paste:
 
 ```css
-/* Replace the rankescalate logo in the admin top bar with yours */
-.navbar-brand .logo img { display: none !important; }
-.navbar-brand .logo a {
+/* Rankescalate logo in the admin sidebar (hides the listmonk logo) */
+.sidebar-branding img { display: none !important; }
+.sidebar-branding a {
   display: block;
-  width: 160px;
-  height: 36px;
-  margin-top: 8px;
-  background: url('/public/static/logo.png') no-repeat left center / contain;
+  width: 180px;
+  height: 40px;
+  background: url('/public/static/logo.png') no-repeat left center / contain !important;
 }
 
-/* Rankescalate brand colour */
-a { color: #e84a1f; }
-.button.is-primary { background: linear-gradient(135deg, #e84a1f 0%, #c4330d 100%); }
+/* Small icon in the top bar on phones */
+.mobile-branding a img { visibility: hidden; }
+.mobile-branding a {
+  background: url('/public/static/favicon.png') no-repeat center / contain !important;
+}
+
+/* Rankescalate brand colour: (light theme, dark theme) */
+* {
+  --primary: light-dark(#e84a1f, #ff7a52);
+  --ring: light-dark(#e84a1f, #ff7a52);
+}
 ```
 
-### Admin tab → Custom JavaScript
+The admin tab title now uses **Site name** automatically. For the tab icon, set
+**Settings → General → Favicon URL** to `<Root URL>/public/static/favicon.png`.
 
+### Admin tab → Custom JavaScript (optional in v7)
+
+Not needed in v7, because the Site name and Favicon URL settings cover it. The v6 script below still works if it's left in place.
 Change `Your Brand` on the second line:
 
 ```js

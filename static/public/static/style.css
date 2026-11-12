@@ -30,6 +30,11 @@ h3,
 h4 {
   font-weight: 400;
 }
+hr {
+  border: 0;
+  height: 1px;
+  background: #eee;
+}
 .section {
   margin-bottom: 45px;
 }
@@ -97,7 +102,7 @@ input[disabled] {
 
 .container {
   margin: 60px auto 15px auto;
-  max-width: 550px;  
+  max-width: 550px;
 }
 
 .wrap {
@@ -131,7 +136,11 @@ input[disabled] {
   padding: 0;
 }
   .lists li {
-    margin: 0 0 5px 0;    
+    margin: 0 0 5px 0;
+
+    &:hover {
+      background: #f8f8f8;
+    }
   }
   .lists .description {
     margin: 0 0 15px 0;
@@ -139,6 +148,14 @@ input[disabled] {
     line-height: 1.3rem;
     color: #888;
     margin-left: 25px;
+  }
+  .lists .rss {
+    float: right;
+
+    img {
+      width: 12px;
+      height: 12px;
+    }
   }
   .form .nonce {
     display: none;
@@ -183,26 +200,6 @@ input[disabled] {
   .pg-page.pg-selected {
     text-decoration: underline;
     font-weight: bold;
-  }
-
-.login .submit {
-  margin-top: 20px;
-}
-  .login button {
-    width: 100%;
-    vertical-align: middle;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .login button img {
-    max-width: 24px;
-    margin-right: 10px;
-  }
-  .login input[name=totp_code] {
-    font-size: 2em;
-    letter-spacing: 5px;
-    text-align: center;
   }
 
 footer.container {

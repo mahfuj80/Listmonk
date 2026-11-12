@@ -9,8 +9,9 @@ x-db-credentials: &db-credentials
 services:
   # listmonk app (branded as Rankescalate)
   app:
-    image: listmonk/listmonk:v6.2.0                           # Pinned: ./static templates were copied from v6.2.0. Don't change this without
-                                                              # updating ./static from the new version (see BRANDING.md) and backing up the DB.
+    image: listmonk/listmonk:v7.0.0-beta.2                    # Pinned: ./static templates were copied from v7.0.0-beta.2 (TEST branch v7-test).
+                                                              # Don't change this without updating ./static from the new version (see BRANDING.md)
+                                                              # and backing up the DB. To go back: switch to branch main (v6.2.0) and restore the DB backup.
     container_name: listmonk_app
     restart: unless-stopped
     ports:
